@@ -1,33 +1,33 @@
 {
-    "editor.detectIndentation": true,
-    "editor.formatOnPaste": true,
-    "editor.tabSize": 4,
-    "editor.insertSpaces": true,
-    "files.insertFinalNewline": true,
-    // Editor
-    "editor.minimap.enabled": true,
-    "editor.minimap.renderCharacters": false,
-    "editor.roundedSelection": false,
-    "editor.renderIndentGuides": true,
-    // only for python language files
-    "[python]": {
-      "editor.rulers": [
-        79
-      ],
-      "editor.tabSize": 4,
-      "editor.insertSpaces": true
-    },
-    "python.venvPath": "C:/Python/projects/venv",
-    "python.pythonPath": "C:\\Python\\projects\\venv\\scripts\\python.exe",
-    "python.terminal.activateEnvironment": true,
-    "python.venvFolders": [
-      "venv",
-      "envs",
-      ".pyenv",
-      ".direnv"
+  "editor.detectIndentation": true,
+  "editor.formatOnPaste": true,
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "files.insertFinalNewline": true,
+  // Editor
+  "editor.minimap.enabled": true,
+  "editor.minimap.renderCharacters": false,
+  "editor.roundedSelection": false,
+  "editor.renderIndentGuides": true,
+  // only for python language files
+  "[python]": {
+    "editor.rulers": [
+      79
     ],
-    "python.linting.enabled": true,
-    "python.linting.pylintEnabled": true,
-    "python.linting.pep8Enabled": true,
-    "editor.formatOnSave": true
-  }
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true
+  },
+  "python.venvPath": "C:/Python/projects/venv",
+  "python.pythonPath": "C:\\Python\\projects\\venv\\scripts\\python.exe",
+  "python.terminal.activateEnvironment": true,
+  "python.venvFolders": [
+    "venv",
+    "envs",
+    ".pyenv",
+    ".direnv"
+  ],
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.pep8Enabled": true,
+  "editor.formatOnSave": false
+}
