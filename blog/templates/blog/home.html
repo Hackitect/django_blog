@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Blog App</title>
-</head>
-
-<body>
-    {% for post in posts %}
-    <h1>{{ post.Title }}</h1>
-    <p> by {{ post.Author }} on {{ post.Date_Posted}}</p>
-    <p>{{ post.Content }}</p>
-    {% endfor %}
-</body>
-
-</html>
+{% extends "blog/base.html" %}
+{% block content %}
+{% for post in posts %}
+<h1>{{ post.Title }}</h1>
+<p> by {{ post.Author }} on {{ post.Date_Posted}}</p>
+<p>{{ post.Content }}</p>
+{% endfor %}
+{% endblock content %}
