@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Blog App</title>
+</head>
+
+<body>
+    {% for post in posts %}
+    <h1>{{ post.Title }}</h1><br>
+    <p> by {{ post.Author }} on {{ post.Date_Posted}}</p><br>
+    <p>{{ post.Content }}</p>
+    {% endfor %}
+</body>
+
+</html>
