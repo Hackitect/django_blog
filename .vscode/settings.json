@@ -17,8 +17,10 @@
     "editor.tabSize": 4,
     "editor.insertSpaces": true
   },
-  "python.venvPath": "C:/python_projects/django-project/venv",
-  "python.pythonPath": "C:\\python_projects\\django-project\\venv\\scripts\\python.exe",
+  "python.venvPath": "C:/Python/projects/venv",
+  "python.pythonPath": "C:\\Python\\projects\\venv\\scripts\\python.exe",
+  // "python.venvPath": "C:/python_projects/django-project/venv",
+  // "python.pythonPath": "C:\\python_projects\\django-project\\venv\\scripts\\python.exe",
   "python.terminal.activateEnvironment": true,
   "python.formatting.provider": "autopep8",
   "python.venvFolders": [
