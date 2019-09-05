@@ -43,6 +43,9 @@ class PostDetailView(DetailView):
     model = Post
 
 
+class PostDeleteView(DeleteView):
+    model = Post
+
 class PostCreateView(CreateView):
     model = Post
     fields = ['title', 'content']
