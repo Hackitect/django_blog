@@ -11,7 +11,12 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+
+# for linux deployment
 import json
+
+# For heroku deployment
+# import django_heroku
 
 # CONFIG_DIR = os.path.dirname(%USERPROFILE%)
 
@@ -28,6 +33,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = config['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
+
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -125,6 +132,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+# if deploying to heroku - use staticfiles
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -143,3 +152,5 @@ EMAIL_PORT = config['EMAIL_PORT']
 EMAIL_USE_SSL = True
 EMAIL_HOST_USER = config['EMAIL_USER']
 EMAIL_HOST_PASSWORD = config['EMAIL_PASSWORD']
+
+# django_heroku.settings(locals())
