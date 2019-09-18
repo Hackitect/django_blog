@@ -19,11 +19,14 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from users import views as users_views
+# from mpesa_api import views as mpesa_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', users_views.register, name='register'),
     path('profile/', users_views.profile, name='profile'),
+    # path('access/token/', mpesa_views.getAccessToken, name='get_mpesa_access_token'),
+    path('api/v1/', include('mpesa_api.urls')),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
     path('password-reset/',
