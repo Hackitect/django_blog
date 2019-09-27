@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.conf import settings
 from django.shortcuts import render
 import json
+import base64
 import datetime
 from . mpesa_credentials import MpesaAccessToken, LipanaMpesaPpassword
 # validated_mpesa_access_token = {}
