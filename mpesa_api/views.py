@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.conf import settings
 from django.shortcuts import render
 import json
+import datetime
 from . mpesa_credentials import MpesaAccessToken, LipanaMpesaPpassword
 # validated_mpesa_access_token = {}
 
@@ -56,7 +57,7 @@ def lipa_na_paybill(request):
 
     }
 
-    response = requests.post(api_url, json = request, headers = headers)
+    response = requests.post(api_url, json=request, headers=headers)
     return (response.text)
 
 
@@ -90,7 +91,7 @@ def process_online_checkout(msisdn, amount, account_reference, transaction_desc)
     url = settings.C2B_ONLINE_CHECKOUT_URL
     headers = {"Content-Type": 'application/json',
                'Authorization': 'Bearer {}'.format(AuthToken.objects.get_token('c2b'))}
-    timestamp = str(datetime.now())[:-7].replace('-', '').replace(' ', '').replace(':', '')
+    timestamp = str(datetime.datetime.now())[:-7].replace('-', '').replace(' ', '').replace(':', '')
     password = base64.b64encode(bytes('{}{}{}'.format(settings.C2B_ONLINE_SHORT_CODE, settings.C2B_ONLINE_PASSKEY,
                                                       timestamp), 'utf-8')).decode('utf-8')
     body = dict(
@@ -108,3 +109,22 @@ def process_online_checkout(msisdn, amount, account_reference, transaction_desc)
     )
     response = post(url=url, headers=headers, data=json.dumps(body))
     return response.json()
+
+
+def post(url, headers, data):
+    request = requests.post(
+        url=url,
+        headers=headers,
+        data=data
+    )
+
+    return request
+
+
+def get(url, headers):
+    request = requests.get(
+        url=url,
+        headers=headers,
+    )
+
+    return request
