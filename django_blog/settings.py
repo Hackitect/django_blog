@@ -11,9 +11,14 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-
-# for linux deployment
+# import django
 import json
+# os.environ.setdefault("DJANGO_SETTINGS_MODULE", __file__)
+# django.setup()
+PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(PROJECT_DIR)
+# for linux deployment
+
 
 # For heroku deployment
 # import django_heroku
@@ -159,17 +164,17 @@ API_URL = config['API_URL']
 API_PUSH_URL = config['API_PUSH']
 
 
-#Consumer Key
+# Consumer Key
 MPESA_B2C_ACCESS_KEY = 'bmmI3UPlJa3pt8GqDG1Fu9D7cKy5YooF'
-#Consumer Secret
+# Consumer Secret
 MPESA_B2C_CONSUMER_SECRET = 'dee8AzvwJKNoZ3YW'
 # This is the encryption of the scurity Credentials I used the Developer site to encrypt it.
 B2C_SECURITY_TOKEN = 'E3Lw64xJ+/ayn1StCP9nu/ObqzgPgCf1IG6JEiubn91QOxkc4u8F0h9NdgjGHaWDHYDEaWxdxqd7uh3ZBsZCrPCm+8ckz8BX/Fqu/x0jOnKzEWwUdbdbFm+hV2q5HJY/EWIq6lnJQeCahkte0TQ6OoVzKyRIUsD4F+pkIIaMkjvqK5mcFWlZQIhoodXd9oBtlo7GWbcYNOjO1+GatYCtVgvjmfWHqI5k4PV/3zjNxvIcTmlB4Ao43fRvXwkRQsvc+8QOUDb6JDO0uF0UhAtz53QLdVmMNmldRoy/nEQ+QrKheY4PhXxnwhrIkFtzWhEG8AhWZjz/Ck4Kr6ePepNEuA=='
-#InitiatorName
+# InitiatorName
 B2C_INITIATOR_NAME = 'testapi409'
 # CommandID
 B2C_COMMAND_ID = 'SalaryPayment'
-#PartyA
+# PartyA
 B2C_SHORTCODE = '601409'
 # this is the url where Mpesa  will post in case of a time out. Replace http://mpesa.ngrok.io/  with your url ow here this app is running
 B2C_QUEUE_TIMEOUT_URL = 'http://mpesa.ngrok.io/mpesa/b2c/timeout'
@@ -181,21 +186,21 @@ B2C_URL = 'https://sandbox.safaricom.co.ke/mpesa/b2c/v1/paymentrequest'
 # C2B (Paybill) Configs
 # See https://developer.safaricom.co.ke/c2b/apis/post/registerurl
 
-#Consumer Secret
+# Consumer Secret
 MPESA_C2B_ACCESS_KEY = 'bmmI3UPlJa3pt8GqDG1Fu9D7cKy5YooF'
 # Consumer Key
 MPESA_C2B_CONSUMER_SECRET = 'dee8AzvwJKNoZ3YW'
 # Url for registering your paybill replace it the url you get from safaricom after you have passed the UATS
 C2B_REGISTER_URL = 'https://sandbox.safaricom.co.ke/mpesa/c2b/v1/registerurl'
-#ValidationURL
+# ValidationURL
 # replace http://mpesa.ngrok.io/ with your url ow here this app is running
 C2B_VALIDATE_URL = 'http://mpesa.ngrok.io/mpesa/c2b/validate'
-#ConfirmationURL
+# ConfirmationURL
 # replace http://mpesa.ngrok.io/ with your url ow here this app is running
 C2B_CONFIRMATION_URL = 'http://mpesa.ngrok.io/mpesa/c2b/confirmation'
-#ShortCode (Paybill)
+# ShortCode (Paybill)
 C2B_SHORT_CODE = '600000'
-#ResponseType
+# ResponseType
 C2B_RESPONSE_TYPE = 'Completed'
 
 # C2B (STK PUSH) Configs
@@ -204,7 +209,7 @@ C2B_RESPONSE_TYPE = 'Completed'
 # Url for sending the STK push request replace it the url you get from safaricom after you have passed the UATS
 C2B_ONLINE_CHECKOUT_URL = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest'
 # Where the Mpesa will post the response
-#replace http://mpesa.ngrok.io/ with your url ow here this app is running
+# sreplace http://mpesa.ngrok.io/ with your url ow here this app is running
 C2B_ONLINE_CHECKOUT_CALLBACK_URL = 'http://mpesa.ngrok.io/mpesa/c2b/online_checkout/callback'
 # TransactionType
 C2B_TRANSACTION_TYPE = 'CustomerPayBillOnline'

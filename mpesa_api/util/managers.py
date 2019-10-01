@@ -3,8 +3,6 @@ import time
 from django.conf import settings
 from django.db import models
 
-from mpesa_api.util.mpesautils import get_token
-
 
 class AuthTokenManager(models.Manager):
     """
