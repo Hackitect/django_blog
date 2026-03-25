@@ -16,6 +16,7 @@ def getAccessToken(request):
     consumer_secret = settings.CONSUMER_SECRET
     api_URL = settings.API_URL
     # api2 = 'https://sandbox.safaricom.co.ke/oauth/v1/generate'
+    https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials
     r = requests.get(api_URL, auth=HTTPBasicAuth(consumer_key, consumer_secret))
     mpesa_access_token = json.loads(r.text)
     validated_mpesa_access_token = mpesa_access_token['access_token']
