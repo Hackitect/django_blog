@@ -35,7 +35,7 @@ class MpesaCallBacks(BaseModel):
 
 
 class MpesaPayment(BaseModel):
-	amount = models.DecimalField(max_digits=10, decimal_places=2)
+	amount = models.DecimalField(max_digits=13, decimal_places=2)
 	description = models.TextField()
 	type = models.TextField()
 	reference = models.TextField()
@@ -43,7 +43,7 @@ class MpesaPayment(BaseModel):
 	middle_name = models.CharField(max_length=100)
 	last_name = models.CharField(max_length=100)
 	phone_number = models.CharField(max_length=10)
-	organization_balance = models.DecimalField(max_digits=10, decimal_places=2)
+	organization_balance = models.DecimalField(max_digits=13, decimal_places=2)
 	
 	class Meta:
 		verbose_name = 'Mpesa Payment'
